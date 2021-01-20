@@ -1,0 +1,35 @@
+.head {
+    background: rgb(14,6,153);
+    background: linear-gradient(152deg, rgba(14,6,153,1) 0%, rgba(9,45,121,1) 35%, rgba(6,123,92,1) 100%);
+}
+
+#profilepic {
+    border-radius: 50%;
+    margin: 10px;
+    max-width: 20vw;
+    max-height: 20vh;
+}
+
+#speech {
+    background-image: url(../assets/pictures/speech-cropped.png);
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    width: 45vw;
+    height: 20vh;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+#quote {
+    margin-bottom: 10%;
+    font-size: 4vw;
+    width: max-content;
+    color: black;
+}
+
+#mobileQuote {
+    font-size: 4vw;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+}
