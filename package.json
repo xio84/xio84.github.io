@@ -1,13 +1,16 @@
 {
-  "name": "Oksidian Portofolio Page",
+  "name": "oksidian_portofolio_page",
   "version": "0.0.2",
   "description": "",
-  "keywords": "Portofolio",
+  "keywords": [
+    "Portofolio",
+    "Oksidian"
+  ],
   "license": "",
   "author": "Oksidian Tafly",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

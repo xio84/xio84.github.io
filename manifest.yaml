@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portofolio
+  labels:
+    app: portofolio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: portofolio
+  template:
+    metadata:
+      labels:
+        app: portofolio
+    spec:
+      containers:
+      - name: portofolio
+        image: oksidiantafly/portofolio
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: portofolio
+  name: portofolio
+  namespace: default
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: portofolio
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: portofolio-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: oksidian.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: portofolio
+                port:
+                  number: 80
